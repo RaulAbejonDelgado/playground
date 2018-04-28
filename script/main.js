@@ -1,7 +1,6 @@
 
 
 var app = new PLAYGROUND.Application({
-	  render: function() {
 		  /*
 			.fillCircle(x, y, radius)
 			.strokeStyle(color)
@@ -10,11 +9,26 @@ var app = new PLAYGROUND.Application({
 			.lineWidth(width)
 			.fillRect(32, 32, 64, 64);
 		*/
+	create: function() {
 
-    this.layer.clear("#000088");
-	this.layer.fillStyle("#ffffff");
-    this.layer.strokeLine(32, 32, 64, 64);
-    this.layer.strokeRect(320, 320, 64, 64);
-    
+    this.loadImage("ship");
+
+  },
+
+	ready: function() {
+
+    /* 
+      ready event listener - if you want to do something
+      when loader has finished the job
+    */
+
+  },
+
+	render: function() {
+
+		this.layer.clear("#000088");
+		this.layer.drawImage(this.images.ship, 580, 500)
+
   }
+
 });
